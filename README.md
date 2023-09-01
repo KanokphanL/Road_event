@@ -1,6 +1,6 @@
 # Road_event
 ## ensemble tubes:
-put ensemble_boxes_wbf_twh.py in /dfs/data/miniconda/envs/your_env_name/lib/pythonx.x/site-packages/ensemble_boxes/ <br>
+put ensemble_boxes_wbf_twh.py in ```/dfs/data/miniconda/envs/your_env_name/lib/pythonx.x/site-packages/ensemble_boxes/``` <br>
 put your tube files into ./tubes <br>
 generate ensemble tube files in ./ensemble_tubes
 ### run:
