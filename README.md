@@ -1,7 +1,16 @@
 # Road_R Challenge
 This repository contains our code for the second task of the ROAD-R Challenge.
+
+|   | Precision@0.5 | Recall@0.5 | F1-score@0.5|
+| Ours | 0.63 | 0.52 | 0.57 |
+
 our results was ensembled from several model including 5 models from basline and 1 model from mmdection.
-The baseline model is from [Road-R](https://github.com/mihaela-stoian/ROAD-R-2023-Challenge#dep).
+
+We followed the baseline from [Road-R](https://github.com/mihaela-stoian/ROAD-R-2023-Challenge#dep) for data pre and post processing.
+From the baseone repository trained and generated results from several backbones including: resnet50RCGRU, resnet50I3D, resnet50C2D, resnet50RCN-NL, resnet50Slowfast, and resnet101Slowfast.
+
+
+
 For mmdetection, we added several part to make the detector works with multi-label dataset.
 
 
