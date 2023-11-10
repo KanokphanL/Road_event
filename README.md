@@ -1,7 +1,7 @@
 # Road_R Challenge
 This repository contains our code for the second task of the ROAD-R Challenge.
 our results was ensembled from several model including 5 models from basline and 1 model from mmdection.
-The baseline model is from (Road-R)[https://github.com/mihaela-stoian/ROAD-R-2023-Challenge#dep].
+The baseline model is from [Road-R](https://github.com/mihaela-stoian/ROAD-R-2023-Challenge#dep).
 For mmdetection, we added several part to make the detector works with multi-label dataset.
 
 
