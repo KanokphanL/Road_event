@@ -26,29 +26,7 @@ Our system is based on MMDetection 3.1.0 with some modification to make the dete
    ```python mmdet2roadr_out.py mmdet_output.pkl save_dir/ --topk 20 --agent_thres 0.5```
 
 ## Model Ensemble
-
- - Replace the mmdet folder with the mmdet from the attachment
-- Trained faster-rcnn with agent only for 12 epochs by setting 'with_act' and 'with_loc' to 'False' with faster-rcnn coco pre-trained model
-- Trained the pre-trained model with 'with_act' and 'with_loc' set to 'True'
-- Generated output.pkl file from tools/test.py
-- Convert the mmdet output.pkl file to roadr task 1 submission format by running 
-	'python mmdet2roadr_out.py mmdet_output.pkl save_dir/ --topk 20 --agent_thres 0.5'
-
-After generating 6 baseline and mmdet output .pkl files, we used ensemble.py to generate the final .pkl file.  
-The .pkl path from all models is listed in ensemble_input_list.txt.    	
-	'python ensemble.py ensemble_input_list.txt ensemble_road_r_val_pkl/ --topk 20 --skip_box_thr 0.9'
-
-Finally, we generated a submission file for task 2 by running post_processing_raw.py	
-
-
-
-The second task requires that the models' predictions are compliant with 
-## ensemble tubes:
-put ```ensemble_boxes_wbf_twh.py``` in ```/dfs/data/miniconda/envs/your_env_name/lib/pythonx.x/site-packages/ensemble_boxes/``` <br>
-put your tube files into ```./tubes``` <br>
-generate ensemble tube files in ```./ensemble_tubes```
-### run:
-```python ensemble_wbf.py tubes(or your tube path) ensemble_tubes(or your ensemble tube path) tube_file_1.pkl,tube_file_2.pkl,...,tube_file_n.pkl (--dump=map_file_path) (--tuning_iou_thr) (--tuning_skip_box_thr) (tuning_conf_type)```
-### example:
-```python ensemble_wbf.py tubes ensemble_tubes res50C2D30_test,res50I3D30_test,res50RCLSTM30_test,res50RCN28_test,res50SlowFast30_test test --dump=map.pkl --tuning_iou_thr --tuning_conf_type```
+After generating .pkl file with road-r task 1 format from baseline models and mmdetection model, we used ensemble.py to generate a submission.pkl file.  
+The .pkl path from all models is listed in ```ensemble_input_list.txt```.  Then run ```python ensemble.py ensemble_input_list.txt ensemble_road_r_val_pkl/ --topk 20 --skip_box_thr 0.9```
+Finally, we generated a submission file for task 2 by running post_processing_raw.py from [Road-R](https://github.com/mihaela-stoian/ROAD-R-2023-Challenge#dep)
 
