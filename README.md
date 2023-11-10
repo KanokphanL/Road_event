@@ -1,4 +1,11 @@
-# Road_event
+# Road_R Challenge
+This repository contains our code for the second task of the ROAD-R Challenge.
+our results was ensembled from several model including 5 models from basline and 1 model from mmdection.
+The baseline model is from https://github.com/mihaela-stoian/ROAD-R-2023-Challenge#dep.
+For mmdetection, we added several part to make the detector works with multi-label dataset.
+
+
+The second task requires that the models' predictions are compliant with 
 ## ensemble tubes:
 put ```ensemble_boxes_wbf_twh.py``` in ```/dfs/data/miniconda/envs/your_env_name/lib/pythonx.x/site-packages/ensemble_boxes/``` <br>
 put your tube files into ```./tubes``` <br>
