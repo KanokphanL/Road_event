@@ -1,5 +1,3 @@
-# from ....utils import transforms as vtf
-# from torchvision import transforms
 
 dataset_type = 'RoadRAgentDataset'
 data_root = 'data/road_r/'

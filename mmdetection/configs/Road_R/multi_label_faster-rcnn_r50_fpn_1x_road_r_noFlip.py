@@ -99,7 +99,6 @@ test_evaluator = dict(
     )
 
 max_epochs = 24
-# training schedule for 1x
 train_cfg = dict(type='EpochBasedTrainLoop', max_epochs=max_epochs, val_interval=1)
 val_cfg = dict(type='ValLoop')
 test_cfg = dict(type='TestLoop')
@@ -117,7 +116,6 @@ param_scheduler = [
         end=max_epochs,#12
         by_epoch=True,
         milestones=[16, 22],
-  #      milestones=[8, 11],
         gamma=0.1)
 ]
 
@@ -128,7 +126,6 @@ optim_wrapper = dict(
                    lr=0.002, # 0.02,
                    momentum=0.9,
                    weight_decay=0.0001),
-
 )
 
 auto_scale_lr = dict(enable=False, base_batch_size=16)
@@ -142,4 +139,3 @@ visualizer = dict(
     type='DetLocalVisualizer', vis_backends=vis_backends, name='visualizer')
 
 
-load_from = 'ckpts/faster_rcnn_r50_lr5e-4_task2_12e.pth'
