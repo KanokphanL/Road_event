@@ -15,69 +15,23 @@ class RoadRAgentDataset(BaseDetDataset):
     """Dataset for COCO."""
 
     METAINFO = {
-        # 'classes':
-        # ('person', 'bicycle', 'car', 'motorcycle', 'airplane', 'bus', 'train',
-        #  'truck', 'boat', 'traffic light', 'fire hydrant', 'stop sign',
-        #  'parking meter', 'bench', 'bird', 'cat', 'dog', 'horse', 'sheep',
-        #  'cow', 'elephant', 'bear', 'zebra', 'giraffe', 'backpack', 'umbrella',
-        #  'handbag', 'tie', 'suitcase', 'frisbee', 'skis', 'snowboard',
-        #  'sports ball', 'kite', 'baseball bat', 'baseball glove', 'skateboard',
-        #  'surfboard', 'tennis racket', 'bottle', 'wine glass', 'cup', 'fork',
-        #  'knife', 'spoon', 'bowl', 'banana', 'apple', 'sandwich', 'orange',
-        #  'broccoli', 'carrot', 'hot dog', 'pizza', 'donut', 'cake', 'chair',
-        #  'couch', 'potted plant', 'bed', 'dining table', 'toilet', 'tv',
-        #  'laptop', 'mouse', 'remote', 'keyboard', 'cell phone', 'microwave',
-        #  'oven', 'toaster', 'sink', 'refrigerator', 'book', 'clock', 'vase',
-        #  'scissors', 'teddy bear', 'hair drier', 'toothbrush'),
-        # # palette is a list of color tuples, which is used for visualization.
-        # 'palette':
-        # [(220, 20, 60), (119, 11, 32), (0, 0, 142), (0, 0, 230), (106, 0, 228),
-        #  (0, 60, 100), (0, 80, 100), (0, 0, 70), (0, 0, 192), (250, 170, 30),
-        #  (100, 170, 30), (220, 220, 0), (175, 116, 175), (250, 0, 30),
-        #  (165, 42, 42), (255, 77, 255), (0, 226, 252), (182, 182, 255),
-        #  (0, 82, 0), (120, 166, 157), (110, 76, 0), (174, 57, 255),
-        #  (199, 100, 0), (72, 0, 118), (255, 179, 240), (0, 125, 92),
-        #  (209, 0, 151), (188, 208, 182), (0, 220, 176), (255, 99, 164),
-        #  (92, 0, 73), (133, 129, 255), (78, 180, 255), (0, 228, 0),
-        #  (174, 255, 243), (45, 89, 255), (134, 134, 103), (145, 148, 174),
-        #  (255, 208, 186), (197, 226, 255), (171, 134, 1), (109, 63, 54),
-        #  (207, 138, 255), (151, 0, 95), (9, 80, 61), (84, 105, 51),
-        #  (74, 65, 105), (166, 196, 102), (208, 195, 210), (255, 109, 65),
-        #  (0, 143, 149), (179, 0, 194), (209, 99, 106), (5, 121, 0),
-        #  (227, 255, 205), (147, 186, 208), (153, 69, 1), (3, 95, 161),
-        #  (163, 255, 0), (119, 0, 170), (0, 182, 199), (0, 165, 120),
-        #  (183, 130, 88), (95, 32, 0), (130, 114, 135), (110, 129, 133),
-        #  (166, 74, 118), (219, 142, 185), (79, 210, 114), (178, 90, 62),
-        #  (65, 70, 15), (127, 167, 115), (59, 105, 106), (142, 108, 45),
-        #  (196, 172, 0), (95, 54, 80), (128, 76, 255), (201, 57, 1),
-        #  (246, 0, 122), (191, 162, 208)]
-        'classes':
-        # ('Ped','Car','Cyc','Mobike','SmalVeh','MedVeh','LarVeh','Bus','EmVeh','TL'),
-        # ('Ped', 'Car', 'Cyc', 'Mobike', 'SmalVeh', 'MedVeh', 'LarVeh', 'Bus', 'EmVeh', 'TL', 'OthTL'),
         (
         'Ped', 'Car', 'Cyc', 'Mobike', 'MedVeh', 'LarVeh', 'Bus', 'EmVeh', 'TL', 'OthTL',
         'Red','Amber','Green','MovAway','MovTow', 'Mov','Brake','Stop','IncatLft', 'IncatRht', 
         'HazLit', 'TurLft', 'TurRht', 'Ovtak','Wait2X', 'XingFmLft','XingFmRht', 'Xing','PushObj',
         'VehLane', 'OutgoLane', 'OutgoCycLane', 'IncomLane', 'IncomCycLane', 'Pav', 'LftPav', 'RhtPav', 'Jun', 'xing', 'BusStop', 'parking'
-        ),
-        'agent_classes':
-        ('Ped', 'Car', 'Cyc', 'Mobike', 'MedVeh', 'LarVeh', 'Bus', 'EmVeh', 'TL', 'OthTL'),
-        'action_classes':
-        ('Red', 'Amber', 'Green', 'MovAway', 'MovTow', 'Mov', 'Brake', 'Stop', 'IncatLft', 'IncatRht', 'HazLit', 'TurLft', 'TurRht', 'Ovtak','Wait2X', 'XingFmLft', 'XingFmRht', 'Xing', 'PushObj'),
-        'location_classes':
-        ('VehLane', 'OutgoLane', 'OutgoCycLane', 'IncomLane', 'IncomCycLane', 'Pav', 'LftPav', 'RhtPav', 'Jun', 'xing', 'BusStop', 'parking'),
+        )
     }
     
     agent_classes = ['Ped', 'Car', 'Cyc', 'Mobike', 'MedVeh', 'LarVeh', 'Bus', 'EmVeh', 'TL', 'OthTL']
     all_agent_classes = ['Ped', 'Car', 'Cyc', 'Mobike', 'SmalVeh', 'MedVeh', 'LarVeh', 'Bus', 'EmVeh', 'TL', 'OthTL']
 
-    all_action_classes = ['Red','Amber','Green', 'MovAway', 'MovTow', 'Mov', 'Rev', 'Brake', 'Stop', 'IncatLft', 'IncatRht', 'HazLit', 'TurLft', 'TurRht', 'MovRht', 'MovLft', 'Ovtak', 'Wait2X', 'XingFmLft', 'XingFmRht', 'Xing', 'PushObj']
     action_classes = ['Red', 'Amber', 'Green', 'MovAway', 'MovTow', 'Mov', 'Brake', 'Stop', 'IncatLft', 'IncatRht', 'HazLit', 'TurLft', 'TurRht', 'Ovtak','Wait2X', 'XingFmLft', 'XingFmRht', 'Xing', 'PushObj']
+    all_action_classes = ['Red','Amber','Green', 'MovAway', 'MovTow', 'Mov', 'Rev', 'Brake', 'Stop', 'IncatLft', 'IncatRht', 'HazLit', 'TurLft', 'TurRht', 'MovRht', 'MovLft', 'Ovtak', 'Wait2X', 'XingFmLft', 'XingFmRht', 'Xing', 'PushObj']
 
     loc_classes = ['VehLane', 'OutgoLane', 'OutgoCycLane', 'IncomLane', 'IncomCycLane', 'Pav', 'LftPav', 'RhtPav', 'Jun', 'xing', 'BusStop', 'parking']
     all_loc_classes = ['VehLane', 'OutgoLane', 'OutgoCycLane', 'IncomLane', 'IncomCycLane', 'Pav', 'LftPav', 'RhtPav', 'Jun', 'xing', 'BusStop', 'parking']
     
-
 
     
     COCOAPI = COCO
@@ -94,7 +48,6 @@ class RoadRAgentDataset(BaseDetDataset):
         return used_ids
     
 
-
     def load_data_list(self) -> List[dict]:
         """Load annotations from an annotation file named as ``self.ann_file``
 
@@ -107,7 +60,6 @@ class RoadRAgentDataset(BaseDetDataset):
         # The order of returned `cat_ids` will not
         # change with the order of the `classes`
         # print("local_path", local_path)
-#         self.cat_ids = self.coco.get_cat_ids(cat_names=self.metainfo['classes'])
         self.cat_ids = [i for i, cat_id in enumerate(self.metainfo['classes'])]
         self.cat2label = {cat_id: i for i, cat_id in enumerate(self.cat_ids)}
         self.cat = [cat_id for i, cat_id in enumerate(self.metainfo['classes'])]
@@ -187,22 +139,10 @@ class RoadRAgentDataset(BaseDetDataset):
             if inter_w * inter_h == 0:
                 print('inter_w*inter_h==0')
                 continue
-            # if ann['area'] <= 0 or w < 1 or h < 1:
-            #     if ann['area'] <= 0:
-            #         print("ann['area]", ann['area'])
-            #     elif w<1:
-            #         print('w', w)
-            #     else:
-            #         print('h', h)
-            #     # print("ann['area'] <= 0 or w < 1 or h < 1")
-            #     continue
+  
             if ann['category_id'] not in self.cat_ids:
-                # print("ann['category_id']", ann['category_id'])
-                # print("self.cat_ids", self.cat_ids)
-                # print("ann['category_id'] not in self.cat_ids")
                 continue
-                
-            
+                            
             bbox = [x1, y1, x1 + w, y1 + h]
 
             if ann.get('iscrowd', False):
@@ -210,26 +150,11 @@ class RoadRAgentDataset(BaseDetDataset):
             else:
                 instance['ignore_flag'] = 0
             instance['bbox'] = bbox
-            # print("instance['bbox']", instance['bbox'] )
-            
-            ## 
-      
-            
+           
             agent_id = self.filter_labels(ann['agent_id'], self.all_agent_classes, self.agent_classes)
             action_id = self.filter_labels(ann['action_id'], self.all_action_classes, self.action_classes)
             location_id = self.filter_labels(ann['loc_id'], self.all_loc_classes, self.loc_classes)
 
-#             agent_id = self.filter_labels(ann['agent_id'], self.all_agent_classes, self.cat)
-#             action_id = self.filter_labels(ann['action_id'], self.all_action_classes, self.cat)
-#             location_id = self.filter_labels(ann['loc_id'], self.all_loc_classes, self.cat)
-            
-#             category_id = [agent_id, action_id, location_id]
-#             category_id = sum(category_id, [])
-#             ## one hot format
-#             cat_id = [0] * len(self.cat)            
-#             for i in category_id:
-#                 cat_id[i] = 1
-                
             act_id = [0] * len(self.action_classes)   
             for i in action_id:
                 act_id[i] = 1
@@ -246,16 +171,9 @@ class RoadRAgentDataset(BaseDetDataset):
             instance['action_label'] = act_id
             instance['location_label'] = loc_id
           
-            
-            
-#             instance['bbox_label'] = self.cat2label[ann['category_id']]
-
             if ann.get('segmentation', None):
                 instance['mask'] = ann['segmentation']
  
-#             for i in category_id:       # create duplicate box -> 1 box 1 label 
-#                 instance['bbox_label'] = i
-#                 instances.append(instance)
             instances.append(instance)
         data_info['instances'] = instances
         return data_info
