@@ -1,0 +1,11 @@
+### 1st row is output file name without '.pkl'
+task_2_test_topk20_skpi0.9_101SlowFast_50SlowFast_RCGRU_I3D_C2D_RCN-NL_mmdet
+### path to each model .pkl file which all format is the same as 1 task output 
+resnet101SlowFast_task2_test.pkl
+resnet50SlowFast_task2_test.pkl
+resnet50RCGRU512_task2_test.pkl
+resnet50I3D512U_task2_test.pkl
+resnet50C2D512_task2_test.pkl
+resnet50RCN-NL512_task2_test.pkl
+mmdet_task2_test.pkl
+### left the last row empty
