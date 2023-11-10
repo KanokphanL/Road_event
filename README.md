@@ -7,11 +7,12 @@ This repository contains our code for the second task of the ROAD-R Challenge.
 
 Our results was ensembled from several model including 5 models from basline and 1 model from mmdection.
 
-## Baseline resutls
+## Baseline Model
 We followed the baseline from [Road-R](https://github.com/mihaela-stoian/ROAD-R-2023-Challenge#dep) for data pre and post processing.
 From the baseone repository trained and generated results from several backbones including: resnet50RCGRU, resnet50I3D, resnet50C2D, resnet50RCN-NL, resnet50Slowfast, and resnet101Slowfast.
+All the generated results are in road-r task 1 format for further model ensemble. 
 
-## MMdetection resutls
+## MMdetection Model
 We applied [mmdetection](https://github.com/open-mmlab/mmdetection) to test multi-label detection.
 Our system is based on MMDetection 3.1.0 with some modification to make the detector works with multi-label dataset.
 
@@ -24,7 +25,7 @@ Our system is based on MMDetection 3.1.0 with some modification to make the dete
 2. Convert the output.pkl in mmdetection format to roadr task 1 submission format by running
    ```python mmdet2roadr_out.py mmdet_output.pkl save_dir/ --topk 20 --agent_thres 0.5```
 
-## Ensemble
+## Model Ensemble
 
  - Replace the mmdet folder with the mmdet from the attachment
 - Trained faster-rcnn with agent only for 12 epochs by setting 'with_act' and 'with_loc' to 'False' with faster-rcnn coco pre-trained model
