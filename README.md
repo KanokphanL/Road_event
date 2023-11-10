@@ -14,8 +14,31 @@ From the baseone repository trained and generated results from several backbones
 ## MMdetection resutls
 We applied [mmdetection](https://github.com/open-mmlab/mmdetection) to test multi-label detection.
 Our system is based on MMDetection 3.1.0 with some modification to make the detector works with multi-label dataset.
-To process road-r dataset, we converted road-r anotation json file to coco format by running '''road_r2coco.py'''
- 
+
+### Training
+1. Convert road-r anotation json file to coco format by running ```road_r2coco.py```
+2. Train faster-rcnn with agent only for 12 epochs by setting 'with_act' and 'with_loc' to 'False' with faster-rcnn coco pre-trained model
+3. Train the agent model with action and location label by setting 'with_act' and 'with_loc' to 'True'
+### Testing
+1. Generat output.pkl file
+2. Convert the output.pkl in mmdetection format to roadr task 1 submission format by running
+   ```python mmdet2roadr_out.py mmdet_output.pkl save_dir/ --topk 20 --agent_thres 0.5```
+
+## Ensemble
+
+ - Replace the mmdet folder with the mmdet from the attachment
+- Trained faster-rcnn with agent only for 12 epochs by setting 'with_act' and 'with_loc' to 'False' with faster-rcnn coco pre-trained model
+- Trained the pre-trained model with 'with_act' and 'with_loc' set to 'True'
+- Generated output.pkl file from tools/test.py
+- Convert the mmdet output.pkl file to roadr task 1 submission format by running 
+	'python mmdet2roadr_out.py mmdet_output.pkl save_dir/ --topk 20 --agent_thres 0.5'
+
+After generating 6 baseline and mmdet output .pkl files, we used ensemble.py to generate the final .pkl file.  
+The .pkl path from all models is listed in ensemble_input_list.txt.    	
+	'python ensemble.py ensemble_input_list.txt ensemble_road_r_val_pkl/ --topk 20 --skip_box_thr 0.9'
+
+Finally, we generated a submission file for task 2 by running post_processing_raw.py	
+
 
 
 The second task requires that the models' predictions are compliant with 
