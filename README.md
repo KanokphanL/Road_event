@@ -2,7 +2,7 @@
 This repository contains our code for the second task of the ROAD-R Challenge.
 
 |   | Precision@0.5 | Recall@0.5 | F1-score@0.5|
-| ------------- | ------------- | ------------- | ------------- |
+| ------------- | :---: | :---: | :---: |
 | Ours | 0.63 | 0.52 | 0.57 |
 
 our results was ensembled from several model including 5 models from basline and 1 model from mmdection.
