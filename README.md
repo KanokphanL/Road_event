@@ -5,14 +5,17 @@ This repository contains our code for the second task of the ROAD-R Challenge.
 | ------------- | :---: | :---: | :---: |
 | Ours | 0.63 | 0.52 | 0.57 |
 
-our results was ensembled from several model including 5 models from basline and 1 model from mmdection.
+Our results was ensembled from several model including 5 models from basline and 1 model from mmdection.
 
+## Baseline resutls
 We followed the baseline from [Road-R](https://github.com/mihaela-stoian/ROAD-R-2023-Challenge#dep) for data pre and post processing.
 From the baseone repository trained and generated results from several backbones including: resnet50RCGRU, resnet50I3D, resnet50C2D, resnet50RCN-NL, resnet50Slowfast, and resnet101Slowfast.
 
-
-
-For mmdetection, we added several part to make the detector works with multi-label dataset.
+## MMdetection resutls
+We applied [mmdetection](https://github.com/open-mmlab/mmdetection) to test multi-label detection.
+Our system is based on MMDetection 3.1.0 with some modification to make the detector works with multi-label dataset.
+To process road-r dataset, we converted road-r anotation json file to coco format by running '''road_r2coco.py'''
+ 
 
 
 The second task requires that the models' predictions are compliant with 
